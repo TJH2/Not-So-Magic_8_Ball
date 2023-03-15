@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="eng-US">
     <head>
-        <title>< Scribblez: Not-So-Magic 8 Ball /></title>
+        <title>< Not-So-Magic 8 Ball /></title>
         <meta charset="utf-8">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,8 +37,9 @@
 
         <script>
             // array for magic 8 ball answers
-            const answers = ["Are You Serious?", "I'm Not Even Gonna Try And Answer That.", "You're Messing With Me, Right?", "You Can't Be Serious.", "Let's Just Move On From Your Question.", "Just Let It Go Already.", "I'm Willing To Forget You Asked That, If You Are.", "I Can't Take You Seriously.", "I'm Sorry, I Only Answer Serious Questions.", "*sigh* Try Again.", "*Rolls Eyes* Try Again.", "Why Would You Ask That?", "Your Question Doesn't Dignify A Response.", "Please, Spare Me.", "Let's Try A Better Question.", "I'm Not Sure What You're Getting At.", "The Number 42... Obviously I'm Kidding... Try Again.", "I'm Not Even Going To Dignify Your Question With A Response.", "You Don't Want My Honest Answer", "Your Question Made My Brain Hurt.", "I Feel Dummer After Reeding You're Qeztion", "It's Obvious My Time Is A Joke To You.", "C'mon Man, Let's Take This Seriously.", "Whoever Said There Are No Stupid Questions... Nevermind...", "Deep Down I Think You Know The Answer.", "I Don't Know But You Should Check Out <a href='https://www.youtube.com/watch?v=QS3-Bv8t04c' target='_blank'>Bang Bang</a> By Who? Maru The Rapper", "I'VE HAD ENOUGH OF YOUR QUESTIONS.",];
+            const answers = ["Are You Serious?", "I'm Not Even Gonna Try And Answer That.", "You're Messing With Me, Right?", "You Can't Be Serious.", "Let's Just Move On To Another Question.", "Just Let It Go Already.", "I'm Willing To Forget You Asked That, If You Are.", "I Can't Take You Seriously.", "I'm Sorry, I Only Answer Serious Questions.", "*sigh* Try Again.", "*Rolls Eyes* Try Again.", "Why Would You Ask That?", "Your Question Doesn't Dignify A Response.", "Please, Spare Me.", "Let's Try A Better Question.", "I'm Not Sure What You're Getting At.", "I'm Not Even Going To Dignify That With A Response.", "You Don't Want My Honest Answer", "Your Question Made My Brain Hurt.", "I Feel Dummer After Reeding You're Qeztion", "It's Obvious My Time Is A Joke To You.", "C'mon Man, Let's Take This Seriously.", "Whoever Said There Are No Stupid Questions... Nevermind...", "Deep Down I Think You Know The Answer.", "I'VE HAD ENOUGH OF YOUR QUESTIONS.",];
 
+            // array for textarea placeholder text
             const placeholder = ["I Would Say Thanks For Your Previous Question, But I Wouldn't Mean It.", "Put A Little More Thought Into Your Questions.", "We've Got All The Time In The World.", "It Would Help If You Took These Questions More Seriously.", "I Think You've Figured Out My Question Expectations Now.", "Make This Next Question Count.", "I Hope You're Having As Much Fun As I am With These Questions."];
 
             // code for magic 8 ball shake
@@ -55,8 +56,8 @@
             const text = document.querySelector("#answerText");
 
             ask.addEventListener('click', () => {
-            if(document.getElementById("question").value == "")
-            {alert("You Need To Type A Question In The Box.");}
+            if(document.getElementById("question").value == "" || !document.getElementById("question").value.endsWith("?"))
+            {alert("You Need To Type A Question Into The Box.\nPlease Include A \"?\" At The End.");}
             else {
                     ball.animate(shaking, shakeTiming);
 
