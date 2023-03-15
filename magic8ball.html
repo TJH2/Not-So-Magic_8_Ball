@@ -74,7 +74,7 @@
                     text.innerHTML = answers[result];
 
                     text.animate(fadein, fadeTiming);
-
+                        // if certain answer is returned, end the program by removing inputs
                         if(text.innerHTML == "I'VE HAD ENOUGH OF YOUR QUESTIONS.")
                         {
                             document.getElementById("question").style.display="none";
